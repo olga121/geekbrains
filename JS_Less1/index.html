@@ -24,7 +24,8 @@
 <script type="text/javascript">
 	window.onload = function(){
 
-		var arr = 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЭЮЯ'.split('');
+		var arr = 'abcdevjgh'.split('');
+		alert(arr);
 
 		var letters = '0123456789ABCDF'.split('');
 
@@ -35,11 +36,12 @@
 					for (var j = 0; j < 8; j++){
 						var td = tr.insertCell();
 						td.appendChild;
-						var n = Math.floor(Math.random() * arr.length);
-						td.innerText = arr[n];	
-							var color = "#";
-							for (var k = 0; k < 6; k++){
-								color += letters[Math.floor(Math.random() * letters.length)];
+						td.innerText = (8 - i)+arr[j]
+//						var n = Math.floor(Math.random() * arr.length);
+//						td.innerText = arr[n];	
+//							var color = "#";
+//							for (var k = 0; k < 6; k++){
+//								color += letters[Math.floor(Math.random() * letters.length)];
 							}
 						td.style.backgroundColor = color;
 					}		
