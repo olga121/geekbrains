@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>insertRow and inserCell in JS table</title>
+	<style type = "text/css">
+	 tbl,td {
+	 	border: 1px solid #000;
+	 	width: 30px;
+	 	height: 30px;
+	 	text-align: center;
+	 }
+	 .active{
+	 	background: red;
+	 }
+	 </style>
+</head>
+<body>
+
+<label for "Rows">Enter a number of rows&nbsp&nbsp</label><input id = "Rows" type = "Number" min  = "1" max = "10" value = "1"/><br>
+<label for "Cells">Enter a number of cells&nbsp&nbsp&nbsp</label><input id = "Cells" type = "Number" min  = "1" max = "10" value = "1"/><br>
+<input type = "button" value = "Submit" id = "elem">
+
+
+<script type="text/javascript">
+	window.onload = function(){
+
+		var arr = 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЭЮЯ'.split('');
+
+		var letters = '0123456789ABCDF'.split('');
+
+		function tableCreate(){
+			var tbl = document.createElement("table");
+				for (var i = 0; i < 8; i++){
+					var tr = tbl.insertRow();	
+					for (var j = 0; j < 8; j++){
+						var td = tr.insertCell();
+						td.appendChild;
+						var n = Math.floor(Math.random() * arr.length);
+						td.innerText = arr[n];	
+							var color = "#";
+							for (var k = 0; k < 6; k++){
+								color += letters[Math.floor(Math.random() * letters.length)];
+							}
+						td.style.backgroundColor = color;
+					}		
+				}
+			document.body.appendChild(tbl);
+			}
+		tableCreate();
+	}
+</script>
+</body>
+</html>	
