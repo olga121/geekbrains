@@ -25,7 +25,6 @@
 	window.onload = function(){
 
 		var arr = 'abcdefjgh'.split('');
-		alert(arr);
 
 		var letters = '0123456789ABCDF'.split('');
 
@@ -35,15 +34,20 @@
 					var tr = tbl.insertRow();	
 					for (var j = 0; j < 8; j++){
 						var td = tr.insertCell();
-						td.appendChild;
+							if ((i+j) % 2){
+								td.style.backgroundColor = "#C00040";
+							} else {
+								td.style.backgroundColor = "yellow"; 
+						}
 						td.innerText = (8 - i)+arr[j]
+						td.appendChild;
 //						var n = Math.floor(Math.random() * arr.length);
 //						td.innerText = arr[n];	
 //							var color = "#";
 //							for (var k = 0; k < 6; k++){
 //								color += letters[Math.floor(Math.random() * letters.length)];
 //							}
-						td.style.backgroundColor = color;
+//						td.style.backgroundColor = color;
 					}		
 				}
 			document.body.appendChild(tbl);
