@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CreateElement in JS table</title>
+	<style type = "text/css">
+	 tbl,td {
+	 	border: 1px solid #000;
+	 	width: 30px;
+	 	height: 30px;
+	 	text-align: center;
+	 }
+	 .active{
+	 	background: red;
+	 }
+	 </style>
+</head>
+<body>
+<script type="text/javascript">
+	window.onload = function(){
+	function tableCreate(){
+		var tbl = document.createElement("table");
+			for (var i = 0; i < 8; i++){
+			var tr = document.createElement("tr");
+			for (var j = 0; j < 8; j++){
+				var td = document.createElement("td");
+				tr.appendChild(td);
+			}
+			tbl.appendChild(tr);
+		}
+		document.body.appendChild(tbl);
+	}
+tableCreate();
+}
+</script>
+</body>
+</html>	
+
