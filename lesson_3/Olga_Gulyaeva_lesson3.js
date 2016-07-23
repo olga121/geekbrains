@@ -2,43 +2,50 @@
 
 "use strict"
 
-//var x;
-//
-//	while (x !== null){	
+var user;
 
-function CheckNumber(){
-	var number = document.getElementById("number").value;
-	if (!isNaN(number)){
-		if(isPrime(number)){
-			document.getElementById("result").innerHTML = number + " простое число!";
-		} else { document.getElementById("result").innerHTML = number + " не простое число";
-	} else { document.getElementById("result").innerHTML = "Пожалуйта, введите число";
+	while (user !== null){	
+
+user = prompt( "Введите число от 1 до 1000000");
+
+if ( Number(user) && 1 <= user <= 1000000){
+
+	if (isPrime(user)){
+		document.getElementById("selfmade").innerText = user + " простое число!"}	
+	else {
+		document.getElementById("selfmade").innerText = user + " не простое число"}
+} else {
+	if (user !== null){
+	document.getElementById("selfmade").innerText = " Вы ввели неверное число"}	
+		}
+//Завершение цикла while
+}
+
+//функция, определяющая простые числа
+function isPrime(n){
+	if (n < 2) {
+		return false}
+	if (n != Math.round(n)){
+		return false}
+	var isPrime = true;
+	for (var i = 2; i <= Math.sqrt(n); i++){
+		if (n % i == 0) {
+			isPrime = false}
 	}
+return isPrime;
 }
 
 
+//Определение максимального простого числа в диапазоне
+var x;
+x = 0;
+while (x < 1000){
 
+if (isPrime(x)){
+	var maxPrimeN = x}
 
-
-
-
-
-// Max prime number in range from 0 till 1000000
-
-function MaxprimeNumber(){
-	var MaxPrimeNumber = 3;
-	for (var i = 4; i <= 1000000; i++){
-		for (var k = 2; k <= Math.sqrt(i); k++){
-			if (i % k == 0){
-				x = false;
-				break;
-			}
-			var x = true;
-		}
-		if(x){
-			MaxPrimeNumber = i;
-		}
-	}		
-	alert ("Максимальное простое число " + MaxPrimeNumber)
+  x++;
 }
-MaxprimeNumber()
+document.getElementById("MaxPrime").innerText = maxPrimeN + " - максимальное простое число в диапазоне до 1000 ";
+
+
